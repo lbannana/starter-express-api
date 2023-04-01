@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <base target="_blank" />
+  </head>
+  <body style="background-color: grey">
+    <button class="c-button"></button>
+    <style>
+      .c-button {
+        min-width: 0px;
+        font-family: fantasy;
+        appearance: none;
+        border: 0;
+        border-color: ;
+        border-radius: 0px;
+        background: ;
+        color: ;
+        padding: 0px 46px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .c-button:hover {
+        background: ;
+      }
+
+      .c-button:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px #cbd6ee;
+      }
+
+      .c-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 0px%;
+      }
+    </style>
+
+    <script>
+      var urlObj = new window.URL(window.location.href);
+      var url =
+        "https://backender2.backendproxyslayer.workers.dev/embed.html#https://crazygames.com/";
+
+      if (url) {
+        var win;
+
+        // Trigger the button click action automatically
+        document.querySelector("button").click();
+
+        // Define the button click action as a separate function
+        function handleButtonClick() {
+          if (win) {
+            win.focus();
+          } else {
+            win = window.open();
+            win.document.body.style.margin = "0";
+            win.document.body.style.height = "100vh";
+            var iframe = win.document.createElement("iframe");
+            iframe.style.border = "none";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.margin = "0";
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+
+            var interval = setInterval(function () {
+              if (win.closed) {
+                clearInterval(interval);
+                win = undefined;
+              }
+            }, 500);
+          }
+        }
+
+        // Call the button click action function immediately
+        handleButtonClick();
+      }
+      setTimeout(function () {
+        window.location.href = "https://classroom.google.com/u/0/";
+      }, 1000);
+    </script>
+  </body>
+</html>
